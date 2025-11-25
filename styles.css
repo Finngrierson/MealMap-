@@ -801,7 +801,7 @@ button {
   bottom: 0;
   left: 0;
   right: 0;
-  height: 3.5rem;
+  height: 4.5rem;
   background-color: #ffffff;
   border-top: 1px solid #e0e0e0;
   display: flex;
@@ -813,7 +813,7 @@ button {
 .nav-btn {
   background: none;
   border: none;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   color: #666666;
   display: flex;
   flex-direction: column;
@@ -847,4 +847,5 @@ button {
 }
 
   
+
   
