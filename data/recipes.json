@@ -1,0 +1,236 @@
+[
+  {
+    "id": "chicken_pasta_1",
+    "name": "Easy Chicken Pasta",
+    "image": "assets/images/chicken-pasta.jpg",
+    "time": 25,
+    "difficulty": "Easy",
+    "calories": 520,
+    "tags": ["quick", "student-budget", "dinner"],
+    "ingredients": [
+      "150g pasta",
+      "1 chicken breast",
+      "1 tbsp olive oil",
+      "1 garlic clove",
+      "100ml pasta sauce",
+      "Salt & pepper"
+    ],
+    "steps": [
+      "Boil pasta for 10–12 minutes.",
+      "Cut chicken into small pieces.",
+      "Heat oil in a pan and cook chicken until white.",
+      "Add garlic and fry for 1 minute.",
+      "Add pasta sauce and simmer for 5 minutes.",
+      "Mix with drained pasta and season."
+    ]
+  },
+
+  {
+    "id": "veg_curry_1",
+    "name": "5-Ingredient Veg Curry",
+    "image": "assets/images/veg-curry.jpg",
+    "time": 20,
+    "difficulty": "Easy",
+    "calories": 410,
+    "tags": ["vegetarian", "quick", "cheap"],
+    "ingredients": [
+      "1 tin chickpeas",
+      "1 onion",
+      "200g frozen vegetables",
+      "1 jar curry sauce",
+      "Rice (optional)"
+    ],
+    "steps": [
+      "Dice onion and fry until soft.",
+      "Add chickpeas and frozen veg.",
+      "Pour in curry sauce and simmer for 10 minutes.",
+      "Serve with cooked rice."
+    ]
+  },
+
+  {
+    "id": "stir_fry_1",
+    "name": "Simple Chicken Stir Fry",
+    "image": "assets/images/stir-fry.jpg",
+    "time": 15,
+    "difficulty": "Easy",
+    "calories": 450,
+    "tags": ["quick", "healthy"],
+    "ingredients": [
+      "1 chicken breast",
+      "Frozen stir fry veg",
+      "2 tbsp soy sauce",
+      "1 tbsp oil",
+      "Noodles or rice"
+    ],
+    "steps": [
+      "Heat oil in a pan.",
+      "Cook chicken until fully white.",
+      "Add stir fry veg and cook for 5 minutes.",
+      "Add soy sauce and mix well.",
+      "Serve with cooked noodles or rice."
+    ]
+  },
+
+  {
+    "id": "omelette_1",
+    "name": "3-Egg Cheese Omelette",
+    "image": "assets/images/omelette.jpg",
+    "time": 10,
+    "difficulty": "Very Easy",
+    "calories": 300,
+    "tags": ["breakfast", "cheap", "protein"],
+    "ingredients": [
+      "3 eggs",
+      "30g cheese",
+      "Salt & pepper",
+      "1 tsp butter"
+    ],
+    "steps": [
+      "Crack eggs into a bowl and whisk.",
+      "Melt butter in a pan.",
+      "Pour in eggs and cook for 2 minutes.",
+      "Add cheese on one half.",
+      "Fold omelette and serve."
+    ]
+  },
+
+  {
+    "id": "tuna_pasta_1",
+    "name": "Tuna Sweetcorn Pasta",
+    "image": "assets/images/tuna-pasta.jpg",
+    "time": 12,
+    "difficulty": "Very Easy",
+    "calories": 480,
+    "tags": ["cheap", "no-fuss", "lunch"],
+    "ingredients": [
+      "150g pasta",
+      "1 tin tuna",
+      "2 tbsp sweetcorn",
+      "2 tbsp mayo",
+      "Salt & pepper"
+    ],
+    "steps": [
+      "Boil pasta for 10–12 minutes.",
+      "Drain pasta and cool slightly.",
+      "Mix tuna, sweetcorn, and mayo.",
+      "Combine with pasta and season."
+    ]
+  },
+
+  {
+    "id": "burrito_1",
+    "name": "Student Veggie Burrito",
+    "image": "assets/images/burrito.jpg",
+    "time": 15,
+    "difficulty": "Easy",
+    "calories": 530,
+    "tags": ["quick", "vegetarian"],
+    "ingredients": [
+      "1 wrap",
+      "Half tin black beans",
+      "Cooked rice",
+      "Salsa",
+      "Grated cheese"
+    ],
+    "steps": [
+      "Warm the wrap.",
+      "Heat black beans in a pan.",
+      "Add rice, beans, salsa, and cheese to the wrap.",
+      "Fold tightly and serve."
+    ]
+  },
+
+  {
+    "id": "fried_rice_1",
+    "name": "Egg Fried Rice",
+    "image": "assets/images/fried-rice.jpg",
+    "time": 12,
+    "difficulty": "Easy",
+    "calories": 420,
+    "tags": ["cheap", "one-pan", "quick"],
+    "ingredients": [
+      "1 cup cooked rice",
+      "1 egg",
+      "Frozen peas",
+      "2 tbsp soy sauce",
+      "Oil"
+    ],
+    "steps": [
+      "Heat oil in a pan.",
+      "Add cooked rice and peas.",
+      "Push rice aside, fry egg, then mix in.",
+      "Add soy sauce and serve."
+    ]
+  },
+
+  {
+    "id": "wraps_1",
+    "name": "Healthy Chicken Wrap",
+    "image": "assets/images/chicken-wrap.jpg",
+    "time": 10,
+    "difficulty": "Easy",
+    "calories": 350,
+    "tags": ["healthy", "lunch", "quick"],
+    "ingredients": [
+      "1 wrap",
+      "Cooked chicken strips",
+      "Lettuce",
+      "Tomato",
+      "Light mayo"
+    ],
+    "steps": [
+      "Lay out wrap on a plate.",
+      "Add chicken, lettuce, tomato.",
+      "Drizzle with light mayo.",
+      "Fold and serve."
+    ]
+  },
+
+  {
+    "id": "pitta_pizza_1",
+    "name": "Pitta Bread Pizza",
+    "image": "assets/images/pitta-pizza.jpg",
+    "time": 10,
+    "difficulty": "Very Easy",
+    "calories": 390,
+    "tags": ["cheap", "fun", "snack"],
+    "ingredients": [
+      "1 pitta bread",
+      "2 tbsp tomato sauce",
+      "Mozzarella",
+      "Any toppings"
+    ],
+    "steps": [
+      "Spread tomato sauce on the pitta.",
+      "Add cheese and toppings.",
+      "Put in oven/air fryer for 8 minutes.",
+      "Serve hot."
+    ]
+  },
+
+  {
+    "id": "spag_bol_1",
+    "name": "Simple Spaghetti Bolognese",
+    "image": "assets/images/spag-bol.jpg",
+    "time": 30,
+    "difficulty": "Medium",
+    "calories": 580,
+    "tags": ["student-budget", "classic"],
+    "ingredients": [
+      "200g mince",
+      "1 onion",
+      "1 garlic clove",
+      "400g pasta sauce",
+      "Spaghetti",
+      "Oil"
+    ],
+    "steps": [
+      "Boil spaghetti until soft.",
+      "Fry onion and garlic until soft.",
+      "Add mince and cook until brown.",
+      "Pour pasta sauce and simmer for 15 minutes.",
+      "Serve sauce over spaghetti."
+    ]
+  }
+]
