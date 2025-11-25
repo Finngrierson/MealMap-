@@ -1,0 +1,850 @@
+/* ================
+   Base Reset & Body
+   ================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background-color: #f5f5f5;
+  color: #222;
+}
+
+/* So the app fills the viewport neatly */
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ================
+   Header
+   ================ */
+
+.app-header {
+  background-color: #1f7a4d;
+  color: #ffffff;
+  padding: 0.8rem 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.app-header h1 {
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+/* ================
+   Main Area
+   ================ */
+
+.app-main {
+  flex: 1;
+  padding: 1rem;
+  padding-bottom: 4.5rem; /* leave room above bottom nav */
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Generic screen styling */
+.screen {
+  animation: fadeIn 0.2s ease-out;
+}
+
+.screen h2 {
+  margin-top: 0;
+  font-size: 1.3rem;
+}
+
+.screen-intro {
+  margin-top: 0.25rem;
+  margin-bottom: 0.75rem;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.screen-note {
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  color: #777;
+}
+
+/* ================
+   Buttons
+   ================ */
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+}
+
+.primary-btn,
+.secondary-btn {
+  display: inline-block;
+  border-radius: 999px;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border: none;
+}
+
+.primary-btn {
+  background-color: #1f7a4d;
+  color: #ffffff;
+}
+
+.primary-btn:hover,
+.primary-btn:focus-visible {
+  background-color: #19623e;
+}
+
+.secondary-btn {
+  background-color: #ffffff;
+  color: #1f7a4d;
+  border: 1px solid #1f7a4d;
+}
+
+.secondary-btn:hover,
+.secondary-btn:focus-visible {
+  background-color: #e6f2ec;
+}
+
+/* ================
+   Login
+   ================ */
+
+   /* LOGIN ICON IN HEADER */
+.login-icon-btn {
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+  cursor: pointer;
+  position: absolute;
+  right: 1rem;
+  top: 0.85rem;
+  color: #333;
+  transition: 0.2s ease;
+}
+
+.login-icon-btn:hover {
+  transform: scale(1.15);
+  opacity: 0.8;
+}
+
+/* DARK OVERLAY BEHIND LOGIN BOX */
+.login-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.login-overlay.hidden {
+  display: none;
+}
+
+/* LOGIN MODAL BOX */
+.login-box {
+  background: #fff;
+  width: 90%;
+  max-width: 380px;
+  border-radius: 14px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  position: relative;
+  animation: loginPop 0.25s ease-out;
+}
+
+/* ENTRY ANIMATION */
+@keyframes loginPop {
+  from {
+    transform: scale(0.85);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.login-box h2 {
+  font-size: 1.6rem;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.login-demo-hint {
+  font-size: 0.85rem;
+  text-align: center;
+  margin-bottom: 1.2rem;
+  opacity: 0.8;
+}
+
+/* CLOSE X BUTTON */
+.login-close-btn {
+  position: absolute;
+  right: 0.7rem;
+  top: 0.5rem;
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: 0.15s;
+}
+
+.login-close-btn:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* LOGIN FORM */
+#login-form label {
+  font-weight: 600;
+  margin-top: 0.6rem;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+#login-form input {
+  width: 100%;
+  padding: 0.65rem;
+  border-radius: 8px;
+  border: 1.5px solid #ccc;
+  font-size: 1rem;
+  outline: none;
+  transition: 0.2s;
+}
+
+#login-form input:focus {
+  border-color: #4CAF50;
+  box-shadow: 0 0 0 3px rgba(76,175,80,0.2);
+}
+
+#login-form button {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.login-error {
+  margin-top: 0.7rem;
+  color: #d9534f;
+  text-align: center;
+}
+
+.login-box h2 {
+  color: #3b7f3b;
+}
+
+
+
+/* ================
+   Home Screen
+   ================ */
+
+.home-highlight {
+  background-color: #ffffff;
+  border-radius: 0.75rem;
+  padding: 0.75rem 0.9rem;
+  margin: 0.9rem 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.home-highlight h3 {
+  margin-top: 0;
+  margin-bottom: 0.4rem;
+  font-size: 1rem;
+}
+
+.home-highlight ul {
+  margin: 0;
+  padding-left: 1.3rem;
+  font-size: 0.9rem;
+}
+
+.home-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+
+/* ================
+   Inputs & Filters
+   ================ */
+
+.text-input,
+.select-input {
+  font-family: inherit;
+  font-size: 0.95rem;
+  padding: 0.6rem 0.7rem;
+  border-radius: 0.5rem;
+  border: 1px solid #cccccc;
+  background-color: #ffffff;
+}
+
+.text-input:disabled,
+.select-input:disabled {
+  background-color: #f0f0f0;
+  color: #999999;
+}
+
+.filters-row {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.9rem;
+}
+
+.filters-row input[type="search"] {
+  flex: 1;
+}
+
+/* ================
+   Cooking Mode
+   ================ */
+
+.cooking-step-box {
+  background-color: #ffffff;
+  border-radius: 0.9rem;
+  padding: 1rem;
+  margin: 0.7rem 0 0.9rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.cooking-step-text {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.cooking-step-controls {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+
+/* -------------------------
+   Browse Search + Filter UI
+-------------------------- */
+
+/* Container for both controls */
+.browse-controls {
+  display: flex;
+  gap: 12px;
+  margin: 20px 0;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Search input styling */
+#search-input {
+  padding: 10px 14px;
+  min-width: 240px;
+  border: 1.5px solid #c8c8c8;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+#search-input:focus {
+  border-color: #2f6e47;     /* your MealMap green theme */
+  box-shadow: 0 0 5px rgba(47, 110, 71, 0.3);
+}
+
+/* Filter dropdown */
+#filter-select {
+  padding: 10px 14px;
+  border: 1.5px solid #c8c8c8;
+  border-radius: 8px;
+  font-size: 15px;
+  background-color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+#filter-select:focus {
+  border-color: #2f6e47;
+  box-shadow: 0 0 5px rgba(47, 110, 71, 0.3);
+}
+
+/* Hover interactions */
+#search-input:hover,
+#filter-select:hover {
+  border-color: #8aa598;
+}
+
+
+/* ================
+   Recipe List & Cards
+   ================ */
+
+
+   
+#recipe-list {
+  margin-top: 0.5rem;
+}
+
+/* Recipe detail actions */
+.recipe-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0.9rem 0 0.5rem;
+}
+
+/* optional: a bit of spacing for saved list */
+#saved-recipes-list {
+  margin-top: 0.6rem;
+}
+
+
+.recipe-list-placeholder p {
+  margin: 0.3rem 0;
+  color: #555;
+}
+
+/* Card layout */
+.recipe-card {
+  background-color: #ffffff;
+  border-radius: 0.75rem;
+  padding: 0.7rem 0.9rem;
+  margin-bottom: 0.55rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  transition: transform 0.08s ease-out, box-shadow 0.08s ease-out;
+}
+
+.recipe-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+}
+
+.recipe-card-body h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.recipe-card-body p {
+  margin: 0.2rem 0;
+  font-size: 0.85rem;
+  color: #555;
+}
+
+.recipe-tags {
+  font-size: 0.8rem;
+  color: #777;
+}
+
+/* Optional thumbnail placeholder (if you add images later) */
+.recipe-card img {
+  width: 70px;
+  height: 70px;
+  border-radius: 0.5rem;
+  object-fit: cover;
+  background-color: #e0e0e0;
+}
+
+/* ================
+  Pop Out
+  ================= */
+  .planner-day-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.planner-day-popup {
+  background: #ffffff;
+  border-radius: 1rem;
+  padding: 1.25rem 1.5rem;
+  max-width: 320px;
+  width: 90%;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.planner-day-popup-heading {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+
+.planner-day-popup-close {
+  border: none;
+  background: transparent;
+  font-size: 1.2rem;
+  float: right;
+  cursor: pointer;
+}
+
+.planner-popup-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 0.75rem;
+}
+
+.planner-popup-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.25rem 0;
+}
+
+.planner-popup-total {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.planner-popup-note {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+
+/* ================
+   Planner
+   ================ */
+
+.planner-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.6rem;
+  margin-top: 0.75rem;
+}
+
+@media (min-width: 600px) {
+  .planner-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.planner-day-card {
+  background-color: #ffffff;
+  border-radius: 0.75rem;
+  padding: 0.6rem 0.7rem;
+  min-height: 80px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.planner-day-card h3 {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.planner-empty {
+  margin: 0.4rem 0 0;
+  font-size: 0.8rem;
+  color: #777;
+}
+
+/* Planner meal list items */
+.planner-meal-list {
+  margin: 0.4rem 0 0;
+  padding-left: 1.1rem;
+  font-size: 0.85rem;
+}
+
+.planner-meal-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.planner-remove-btn {
+  border: none;
+  background: #f2d7da;
+  color: #922b3e;
+  border-radius: 999px;
+  width: 1.4rem;
+  height: 1.4rem;
+  font-size: 0.85rem;
+  line-height: 1.4rem;
+  text-align: center;
+  padding: 0;
+  cursor: pointer;
+}
+
+/* --- Gallery Action Buttons (Take Photo / Upload) --- */
+
+.gallery-actions {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+.gallery-upload-btn {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  background: #4CAF50;         /* Match your existing theme */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.gallery-upload-btn:hover {
+  background: #45a049;
+}
+
+.gallery-upload-btn:active {
+  transform: scale(0.96);
+}
+
+/* Small screens: stack buttons nicely */
+@media (max-width: 480px) {
+  .gallery-actions {
+    flex-direction: column;
+  }
+}
+
+
+/* Gallery remove button overlay */
+.gallery-item {
+  position: relative;
+}
+
+.gallery-remove-btn {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  border: none;
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  border-radius: 999px;
+  width: 1.3rem;
+  height: 1.3rem;
+  font-size: 0.8rem;
+  line-height: 1.3rem;
+  text-align: center;
+  padding: 0;
+  cursor: pointer;
+}
+
+
+/* Gallery delete button overlay */
+
+.gallery-item {
+  position: relative;
+}
+
+.gallery-delete-btn {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  border: none;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  border-radius: 999px;
+  width: 20px;
+  height: 20px;
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.gallery-delete-btn:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+
+/* ================
+   Saved & Gallery Empty States
+   ================ */
+
+.empty-state {
+  background-color: #ffffff;
+  border-radius: 0.75rem;
+  padding: 0.9rem;
+  margin-top: 0.75rem;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.empty-state p {
+  margin-top: 0;
+  margin-bottom: 0.6rem;
+}
+
+/* ================
+   Recipe Detail
+   ================ */
+
+.recipe-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0.5rem 0 0.7rem;
+}
+
+.meta-chip {
+  background-color: #ffffff;
+  border-radius: 999px;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.8rem;
+  border: 1px solid #e0e0e0;
+}
+
+.meta-chip span {
+  color: #777;
+  margin-right: 0.25rem;
+}
+
+.meta-chip strong {
+  color: #222;
+}
+
+/* Sections */
+
+.recipe-section {
+  margin-top: 0.9rem;
+}
+
+.recipe-section h3 {
+  margin-bottom: 0.4rem;
+  font-size: 1rem;
+}
+
+.ingredients-list,
+.steps-list {
+  margin: 0;
+  padding-left: 1.3rem;
+  font-size: 0.9rem;
+}
+
+.ingredients-list li,
+.steps-list li {
+  margin-bottom: 0.25rem;
+}
+
+/* ================
+   Gallery Grid
+   ================ */
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  margin-top: 1rem;
+}
+
+@media (min-width: 600px) {
+  .gallery-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.gallery-photo {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 8px;
+  object-fit: cover;
+  background-color: #e0e0e0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+.gallery-upload-btn {
+  display: block;
+  width: 100%;
+  margin-top: 1rem;
+  padding: 0.7rem;
+  font-size: 0.9rem;
+  border-radius: 10px;
+  background-color: #1f7a4d;
+  color: white;
+  text-align: center;
+}
+
+.gallery-upload-btn:hover {
+  background-color: #17603c;
+}
+
+
+
+/* ================
+   Bottom Navigation
+   ================ */
+
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3.5rem;
+  background-color: #ffffff;
+  border-top: 1px solid #e0e0e0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 20;
+}
+
+.nav-btn {
+  background: none;
+  border: none;
+  font-size: 0.8rem;
+  color: #666666;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1rem;
+}
+
+.nav-btn span {
+  pointer-events: none;
+}
+
+/* active state matches currently selected screen */
+.nav-btn.active {
+  color: #1f7a4d;
+  font-weight: 600;
+}
+
+/* ================
+   Animations
+   ================ */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+  
+  

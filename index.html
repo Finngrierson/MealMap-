@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MealMap</title>
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="manifest" href="manifest.json" />
+</head>
+
+<body>
+
+  <!-- Header with login icon -->
+  <header class="app-header">
+    <h1>MealMap</h1>
+
+    <!-- Login icon -->
+    <button id="login-icon" class="login-icon-btn" aria-label="Login / Account">
+      🔐
+    </button>
+  </header>
+
+  <!-- LOGIN MODAL -->
+  <div id="login-overlay" class="login-overlay hidden">
+    <div class="login-box">
+      <button id="login-close-btn" class="login-close-btn">×</button>
+
+      <h2>Login</h2>
+      <p class="login-demo-hint">Demo account:<br>
+        <strong>student@mealmap.app</strong><br>
+        <strong>meal1234</strong>
+      </p>
+
+      <form id="login-form">
+        <label>Email</label>
+        <input type="email" id="login-email" required>
+
+        <label>Password</label>
+        <input type="password" id="login-password" required>
+
+        <button type="submit" class="primary-btn">Log in</button>
+
+        <p id="login-error" class="login-error"></p>
+      </form>
+    </div>
+  </div>
+
+  <!-- MAIN APP ROOT -->
+  <main id="app-root" class="app-main"></main>
+
+  <!-- NAVIGATION -->
+  <nav id="bottom-nav" class="bottom-nav">
+    <button class="nav-btn" data-screen="home"><span>Home</span></button>
+    <button class="nav-btn" data-screen="browse"><span>Browse</span></button>
+    <button class="nav-btn" data-screen="planner"><span>Planner</span></button>
+    <button class="nav-btn" data-screen="saved"><span>Saved</span></button>
+    <button class="nav-btn" data-screen="gallery"><span>Gallery</span></button>
+  </nav>
+
+  <script src="api.js"></script>
+  <script src="app.js"></script>
+
+</body>
+</html>
