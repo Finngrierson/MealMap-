@@ -1,4 +1,4 @@
-// ---------- Simple LOGIN SYSTEM ----------
+// Simple LOGIN SYSTEM
 const DEMO_USER = {
   email: "student@mealmap.app",
   password: "meal1234"
@@ -84,18 +84,14 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 
-// ---------- Your existing app.js starts here ----------
-
-
-
-// ---------- Simple global app state ---------- //
+// Simple global app state //
 
 const appState = {
   recipes: [],
   recipesLoaded: false,
   selectedRecipeId: null,
   savedRecipeIds: [],
-  cookingStepIndex: 0, // which step we’re on in cooking mode
+  cookingStepIndex: 0, // which step user is on in cooking mode
   planner: {
     mon: [],
     tue: [],
@@ -109,9 +105,7 @@ const appState = {
 };
 
 
-// ---------- Data loading (recipes.json) ---------- //
-
-// ---------- Data loading (via API, with recipes.json fallback) ---------- //
+//  -- Data loading (recipes.json)  -- //
 
 function loadRecipesIfNeeded() {
   // If we've already loaded recipes this session, reuse them
@@ -119,7 +113,7 @@ function loadRecipesIfNeeded() {
     return Promise.resolve(appState.recipes);
   }
 
-  // 1) Try to load from Spoonacular API (via api.js)
+  // Loading recipes from Spoonacular API (via api.js)
   return searchRecipesFromApi('', {}) // empty query = general recipes
     .then((apiRecipes) => {
       if (!apiRecipes || !Array.isArray(apiRecipes) || apiRecipes.length === 0) {
@@ -132,11 +126,11 @@ function loadRecipesIfNeeded() {
         return {
           id: String(r.id),
           name: r.title || 'Recipe',
-          time: 30, // default – API mapping doesn't give time in api.js; adjust if you add it
+          time: 30,
           difficulty: 'Easy', // simple default label
           tags: r.vegetarian ? ['Vegetarian'] : [],
 
-          // calories if available
+          // calories
           calories: typeof r.calories === 'number' ? r.calories : null,
 
           // basic placeholders – real values will be filled by getRecipeDetailsFromApi in recipe-detail
@@ -154,7 +148,7 @@ function loadRecipesIfNeeded() {
     .catch((error) => {
       console.error('Failed to load recipes from API, falling back to recipes.json:', error);
 
-      // 2) Fallback to your old local JSON behaviour if API fails
+      // Fallback to old local JSON behaviour if API fails
       return fetch('data/recipes.json')
         .then((response) => {
           if (!response.ok) {
@@ -360,7 +354,7 @@ function renderBrowse(root) {
         Find student-friendly meals and add them to your planner.
       </p>
 
-      <!-- 🔍 Search + Filter Controls -->
+      <!-- Search + Filter Controls -->
       <div class="browse-controls">
         <input
           type="text"
@@ -377,7 +371,7 @@ function renderBrowse(root) {
         </select>
       </div>
 
-      <!-- 🔽 Recipe cards will be rendered here -->
+  
       <div id="recipe-list" aria-live="polite"></div>
     </section>
   `;
@@ -404,7 +398,7 @@ function renderBrowse(root) {
       const query = (searchInput?.value || "").toLowerCase().trim();
       const selectedFilter = filterSelect?.value || "all";
 
-      // 🔍 Text search
+      // Text search
       if (query) {
         filtered = filtered.filter((recipe) => {
           const name = (recipe.name || "").toLowerCase();
@@ -421,7 +415,7 @@ function renderBrowse(root) {
         });
       }
 
-      // 🥦 Tag filter (vegetarian, vegan, quick, budget)
+      // Tag filter (vegetarian, vegan, quick, budget)
       if (selectedFilter !== "all") {
         filtered = filtered.filter((recipe) => {
           if (!Array.isArray(recipe.tags)) return false;
@@ -457,7 +451,7 @@ function renderBrowse(root) {
         })
         .join("");
 
-      // Keep your existing behaviour: clicking a card opens the detail screen
+    
       attachRecipeCardHandlers();
     }
 
@@ -498,7 +492,7 @@ function renderPlanner(root) {
       </button>
 
       <div class="planner-grid" aria-label="Weekly meal planner" id="planner-grid">
-        <!-- Day cards injected here -->
+       
       </div>
 
       <p class="screen-note">
@@ -576,11 +570,11 @@ function renderPlanner(root) {
       })
       .join("");
 
-    // Remove button logic (now stops click from bubbling to the day card)
+    // Remove button logic 
     const removeButtons = document.querySelectorAll(".planner-remove-btn");
     removeButtons.forEach((btn) => {
       btn.addEventListener("click", (event) => {
-        event.stopPropagation(); // 🛑 don't trigger the day popup
+        event.stopPropagation(); // don't trigger the day popup
         const dayKey = btn.dataset.day;
         const indexStr = btn.dataset.index;
         if (!dayKey || indexStr === undefined) return;
@@ -605,7 +599,7 @@ function renderPlanner(root) {
         showPlannerDayPopup(dayKey, dayLabel, recipeById);
       });
 
-      // Also open with Enter / Space for accessibility
+      // Also open with Enter 
       card.addEventListener("keydown", (event) => {
         if (event.key === "Enter" || event.key === " ") {
           event.preventDefault();
@@ -799,7 +793,7 @@ function renderGallery(root) {
       />
 
       <div class="gallery-grid" id="gallery-grid">
-        <!-- Photos will be injected here -->
+        
       </div>
 
       <p class="screen-note">
@@ -836,14 +830,14 @@ function renderGallery(root) {
 
   if (takePhotoBtn && takeInput) {
     takePhotoBtn.addEventListener("click", () => {
-      takeInput.click(); // 📷 opens camera on supported mobile browsers
+      takeInput.click(); // opens camera on supported mobile browsers
     });
     takeInput.addEventListener("change", handleFileInputChange);
   }
 
   if (uploadDeviceBtn && uploadInput) {
     uploadDeviceBtn.addEventListener("click", () => {
-      uploadInput.click(); // 📁 opens gallery/file picker
+      uploadInput.click(); //  opens gallery/file picker
     });
     uploadInput.addEventListener("change", handleFileInputChange);
   }
@@ -984,7 +978,7 @@ function renderRecipeDetail(root) {
     });
 }
 
-// This is basically your old renderRecipeDetail body, but moved into a helper
+
 function renderRecipeDetailContent(root, recipe) {
   if (!recipe) {
     root.innerHTML = `
@@ -1322,3 +1316,4 @@ function registerServiceWorker() {
   renderScreen("home");
   registerServiceWorker();
 })();
+
