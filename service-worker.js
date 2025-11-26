@@ -7,7 +7,7 @@ const ASSETS_TO_CACHE = [
   "app.js",
   "manifest.json",
   "data/recipes.json"
-  // Add icons if you want:
+  
   // "assets/icons/icon-192.png",
   // "assets/icons/icon-512.png"
 ];
@@ -51,9 +51,10 @@ self.addEventListener("fetch", (event) => {
         return cachedResponse;
       }
       return fetch(request).catch(() => {
-        // Optional: show fallback content when offline for non-cached URLs
+        
         return caches.match("index.html");
       });
     })
   );
 });
+
