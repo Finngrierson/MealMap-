@@ -1,5 +1,5 @@
 // api.js
-const API_KEY = 'eff0cc6adebb451f844eb5b5f8d6eddc';
+const API_KEY = 'a3e070c9382d404a8c8a72e15c143e8c';
 const API_BASE = 'https://api.spoonacular.com';
 
 async function searchRecipesFromApi(query, filters = {}) {
@@ -88,3 +88,4 @@ function stripHtml(html) {
   div.innerHTML = html;
   return div.textContent || div.innerText || '';
 }
+
