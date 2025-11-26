@@ -3,7 +3,7 @@ const API_KEY = 'a3e070c9382d404a8c8a72e15c143e8c';
 const API_BASE = 'https://api.spoonacular.com';
 
 async function searchRecipesFromApi(query, filters = {}) {
-  // Build query params
+  // query params
   const params = new URLSearchParams({
     apiKey: API_KEY,
     query: query || '',          // text the user typed
@@ -11,7 +11,7 @@ async function searchRecipesFromApi(query, filters = {}) {
     number: 20                   // how many results
   });
 
-  // Optional filters – adapt to your app
+  // filters
   if (filters.vegetarian) {
     params.append('diet', 'vegetarian');
   }
@@ -28,7 +28,6 @@ async function searchRecipesFromApi(query, filters = {}) {
 
   const data = await response.json();
 
-  // Map the API response to your existing recipe shape
   const recipes = (data.results || []).map(r => ({
     id: r.id,
     title: r.title,
@@ -47,7 +46,7 @@ async function searchRecipesFromApi(query, filters = {}) {
   return recipes;
 }
 
-// For a "recipe details" page
+// For recipe detail page
 async function getRecipeDetailsFromApi(recipeId) {
   const params = new URLSearchParams({
     apiKey: API_KEY,
@@ -88,4 +87,5 @@ function stripHtml(html) {
   div.innerHTML = html;
   return div.textContent || div.innerText || '';
 }
+
 
