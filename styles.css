@@ -50,7 +50,7 @@ body {
 .app-main {
   flex: 1;
   padding: 1rem;
-  padding-bottom: 4.5rem; /* leave room above bottom nav */
+  padding-bottom: 4.5rem; 
   max-width: 800px;
   margin: 0 auto;
 }
@@ -363,7 +363,7 @@ button {
 }
 
 #search-input:focus {
-  border-color: #2f6e47;     /* your MealMap green theme */
+  border-color: #2f6e47;     
   box-shadow: 0 0 5px rgba(47, 110, 71, 0.3);
 }
 
@@ -408,7 +408,7 @@ button {
   margin: 0.9rem 0 0.5rem;
 }
 
-/* optional: a bit of spacing for saved list */
+
 #saved-recipes-list {
   margin-top: 0.6rem;
 }
@@ -455,7 +455,7 @@ button {
   color: #777;
 }
 
-/* Optional thumbnail placeholder (if you add images later) */
+
 .recipe-card img {
   width: 70px;
   height: 70px;
@@ -601,7 +601,7 @@ button {
 .gallery-upload-btn {
   flex: 1;
   padding: 0.75rem 1rem;
-  background: #4CAF50;         /* Match your existing theme */
+  background: #4CAF50;         
   color: white;
   border: none;
   border-radius: 8px;
@@ -825,7 +825,7 @@ button {
   pointer-events: none;
 }
 
-/* active state matches currently selected screen */
+
 .nav-btn.active {
   color: #1f7a4d;
   font-weight: 600;
@@ -849,4 +849,5 @@ button {
   
 
   
+
 
